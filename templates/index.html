@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block judul %} Reservasi {% endblock %}
+
+{% block JudulKonten %}
+    <a href="/reservasi/" class="btn-btn-info" style="color: black;"> Reservasi Disini </a>
+{% endblock %}
+
+{% block konten %}
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Nama</th>
+            <th style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Kontak</th>
+            <th style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Tanggal Reservasi</th>
+            <th style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Jam</th>
+            <th style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Paket</th>
+            <th style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;"></th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for row in hasil %}
+                <tr>
+                    <td>{{row.0}}</td>
+                    <td>{{row.1}}</td>
+                    <td>{{row.2}}</td>
+                    <td>{{row.3}}</td>
+                    <td>{{row.4}}</td>
+                    <td>
+                        <a href="/hapus/{{row.0}}" class="btn btn-danger"
+                        onclick="return confirm('yakin akan membatalkan reservasi {{row.0}} ?')"> Batalkan </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Noted : Pesanan yang sudah di pesan tidak dapat di ubah</p>
+{% endblock %}
+

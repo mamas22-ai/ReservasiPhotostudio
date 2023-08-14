@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block judul %} Reservasi {% endblock %}
+
+{% block JudulKonten %}
+    <h3 class="box-title"> Reservasi </h3>
+{% endblock %}
+
+{% block konten%}
+    <form action="{{url_for('pesan')}}" method="POST">
+        <div class="form-group">
+            <label style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Nama</label>
+            <input type="text" name="nama" class="form-control" placeholder="nama">
+        </div>
+        <div class="form-group">
+            <label style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Kontak</label>
+            <input type="text" name="kontak" class="form-control" placeholder="kontak">
+        </div>
+        <div class="form-group">
+            <label style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Tanggal Reservasi</label>
+            <input type="date" name="tgl_reservasi" class="form-control" placeholder="tgl_reservasi">
+        </div>
+        <div class="form-group">
+            <label style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Jam</label>
+            <input type="text" name="jam" class="form-control" placeholder="jam">
+        </div>
+        <div class="form-group">
+            <label style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Paket</label>
+            <input type="text" name="paket" class="form-control" placeholder="H/P/S">
+        </div>
+        <div class="box-footer">
+            <button type="reset" class="btn btn-default"> Cancel </button>
+            <button type="submit" class="btn btn-primary pull-right"> Submit </button>
+        </div>
+    </form>
+{% endblock %}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- title area -->
+    <title> Halaman {% block judul%} {% endblock %} </title>
+
+    <!-- CSS area -->
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap1.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/dataTables.bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/AdminLTE.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/_all-skins.min.css')}}">
+
+</head>
+
+<body>
+<!-- content area -->
+    <div class="content-wrapper" style="background-color: white;">
+        <section class="content-header">
+            <h1>
+                <a href="/" style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Photowae</a>
+                <small style="color: black; font-family: 'Martian Mono', monospace; font-family: 'Quicksand', sans-serif;">Self Photo Studio</small>
+            </h1>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12" style="background-color: white;">
+                    <div class="box">
+                        <div class="box-header">
+                            {% block JudulKonten %} {% endblock %}
+                        </div>
+
+                        <!-- data table (database) area -->
+                        <div class="box-body">
+                            {% block konten %} {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<!-- Javascript area -->
+<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/jquery.slimscroll.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/fastclick.js')}}"></script>
+<script src="{{url_for('static', filename='js/adminlte.min.js')}}"></script>
+<script src="{{url_for('static', filename='js/demo.js')}}"></script>
+
+
+</body>
+</html>
+
